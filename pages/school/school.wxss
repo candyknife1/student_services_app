@@ -1,0 +1,17 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.developing {
+  text-align: center;
+}
+
+.notice {
+  display: block;
+  margin-top: 20px;
+  color: #666;
+  font-size: 16px;
+} 

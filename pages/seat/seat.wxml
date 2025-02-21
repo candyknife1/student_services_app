@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="developing">
+    <icon type="info" size="64"></icon>
+    <text class="notice">{{notice}}</text>
+  </view>
+</view> 

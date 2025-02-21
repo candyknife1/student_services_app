@@ -1,0 +1,265 @@
+/* pages/list.wxss */
+.title{
+    text-align: center;
+    font-size: 80rpx;
+    margin-top: 10rpx;
+}
+
+#inputroom{
+	margin: 10rpx 0 0 0 ;
+	
+}
+
+#inputroom input{
+	background-color: white;
+	border-radius:10px;
+    height: 80rpx;
+    width: 200rpx;
+    display: block;
+    margin: auto;
+    text-align: center;
+	border: 5rpx solid rgb(143, 143, 143);
+	font-style: red;
+	
+}
+.btn-area{
+    width: 100%;
+    text-align: center;
+    /* margin: auto; */
+}
+page{
+	width: 100%;
+	height: 100%;
+	background-color: #f7f7f7;
+	text-align: center;
+	/* margin: auto; */
+}
+.building{
+	background-color: white;
+	height: 100rpx;
+	text-align: center;
+	border-radius:10px;
+}
+.picker{
+	height: 100%;
+	margin: auto;
+	line-height: 100rpx;
+}
+.form{
+	display: block;
+	/* margin: 50px auto; */
+}
+
+.dianliang{
+    padding-left: 20rpx;
+    font-size: 100rpx;
+    
+}
+.avg{
+    padding-bottom: 80rpx;
+}
+#body{
+
+	height: 100%;
+}
+.power{
+    height: 280rpx;
+
+}
+.weui-footer{
+    /* float: left; */
+	height: 50rpx;
+	width: 100%;
+    position: fixed;
+    /* position:sticky; */
+	margin-bottom: 5rpx;
+	bottom: 0rpx;
+	color: rgb(141, 141, 141);
+	
+}
+#kf{
+	display:flex;
+	height: 40px;
+	width: 40px;
+	right: 5rpx;
+	/* top:100px; */
+	bottom: 20rpx;
+	position:fixed;
+	padding: 0;
+	
+}
+
+.page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* 顶部提示栏样式 */
+.header {
+  background: #1296db;
+  padding: 20rpx 30rpx;
+  height: 180rpx; /* 增加头部高度 */
+  display: flex;
+  align-items: flex-end; /* 将提示栏对齐到底部 */
+  padding-bottom: 40rpx;
+}
+
+.notice-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16rpx 20rpx;
+  border-radius: 8rpx;
+}
+
+.notice-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+.notice-text {
+  font-size: 26rpx;
+  color: #ffffff;
+  flex: 1;
+}
+
+/* 查询表单区域样式 */
+.query-section {
+  margin-top: -40rpx;
+  padding: 0 30rpx;
+}
+
+.query-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 97;
+}
+
+.input-group {
+  margin-bottom: 40rpx;
+}
+
+.picker-item, .input-item {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.picker-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  color: #333333;
+}
+
+.picker-value.placeholder {
+  color: #999999;
+}
+
+.arrow-icon {
+  font-size: 24rpx;
+  color: #999999;
+  transition: transform 0.3s;
+}
+
+/* 当下拉菜单展开时箭头旋转 */
+.isPickerShow .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.input {
+  padding: 20rpx;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+}
+
+.input-placeholder {
+  color: #999999;
+}
+
+/* 查询按钮样式 */
+.query-button {
+  background: #1296db;
+  color: #ffffff;
+  border-radius: 8rpx;
+  padding: 24rpx;
+  font-size: 32rpx;
+  border: none;
+  text-align: center;
+  width: 100%;
+}
+
+.query-button.loading {
+  opacity: 0.7;
+}
+
+.query-button::after {
+  border: none;
+}
+
+/* 结果区域样式 */
+.result-section {
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+.electricity-info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-item .label {
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 8rpx;
+}
+
+.info-item .value {
+  font-size: 40rpx;
+  color: #1296db;
+  font-weight: 500;
+}
+
+.chart-container {
+  height: 400rpx;
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.picker-wrapper {
+    position: relative;
+    z-index: 100;
+}
+
+.charts-section {
+    margin: 30rpx;
+    background: #ffffff;
+    border-radius: 16rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}

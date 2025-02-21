@@ -1,0 +1,55 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/seat/seat",
+        "pages/school/school",
+        "pages/my/my"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "校园服务助手",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents",
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#1296db",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "电量查询",
+                "iconPath": "images/electricity_off.png",
+                "selectedIconPath": "images/electricity_on.png"
+            },
+            {
+                "pagePath": "pages/seat/seat",
+                "text": "座位预约",
+                "iconPath": "images/seat_off.png",
+                "selectedIconPath": "images/seat_on.png"
+            },
+            {
+                "pagePath": "pages/school/school",
+                "text": "考研院校",
+                "iconPath": "images/school_off.png",
+                "selectedIconPath": "images/school_on.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "images/my_off.png",
+                "selectedIconPath": "images/my_on.png"
+            }
+        ]
+    }
+}
