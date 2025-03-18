@@ -9,7 +9,7 @@ Page({
         loading: false,
         showChart: false,
         chartData: null,  // 添加图表数据
-        notice: '8号楼的ABCD区用1234代替，例如A102房间号为1102',
+        notice: '点我!!!\r\r8号楼的ABCD区用1234代替，例如A102房间号为1102',
         hasFetchedBuildings: false,
         isPickerShow: false // 控制下拉菜单的显示
     },
@@ -17,16 +17,16 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    async onLoad(options) {
-        try {
-            // 同时获取楼栋列表和图表数据
-            await Promise.all([
-                this.fetchBuildingList(),
-                this.fetchChartData()
-            ])
-        } catch (error) {
-            console.error('初始化数据失败：', error)
-        }
+  async onLoad(options) {
+      try {
+        // 同时获取楼栋列表和图表数据
+        await Promise.all([
+            this.fetchBuildingList(),
+            this.fetchChartData()
+        ])
+    } catch (error) {
+        console.error('初始化数据失败：', error)
+    }
     },
 
     /**
@@ -55,7 +55,7 @@ Page({
     async fetchBuildingList() {
         return new Promise((resolve, reject) => {
             wx.request({
-                url: 'http://127.0.0.1:5050/get_buildings',
+                url: 'https://rmxcizonggsx.sealoshzh.site/get_buildings',
                 method: 'GET',
                 success: (res) => {
                     if (res.statusCode === 200 && res.data) {
@@ -89,53 +89,36 @@ Page({
     },
 
     // 获取图表数据
-    async fetchChartData() {
-        try {
-            wx.showLoading({
-                title: '加载图表...',
-            })
-
-            const res = await new Promise((resolve, reject) => {
-                wx.request({
-                    url: 'http://127.0.0.1:5050/get_chart_data',
-                    method: 'GET',
-                    success: (res) => {
-                        if (res.statusCode === 200 && !res.data.error) {
-                            resolve(res.data)
-                        } else {
-                            reject(new Error(res.data.error || '获取图表数据失败'))
-                        }
-                    },
-                    fail: (err) => {
-                        reject(new Error('网络错误，请检查网络连接'))
-                    }
-                })
-            })
-
-            // 将数据存储到本地
-            wx.setStorageSync('chartData', res)
-            
-            this.setData({
-                chartData: res
-            })
-        } catch (error) {
-            console.error('获取图表数据失败：', error)
-            // 如果获取失败，尝试从本地读取缓存数据
-            const cachedData = wx.getStorageSync('chartData')
-            if (cachedData) {
-                this.setData({
-                    chartData: cachedData
-                })
-            } else {
+    fetchChartData() {
+        wx.showLoading({ title: '加载图表...' });
+        wx.request({
+            url: 'https://rmxcizonggsx.sealoshzh.site/get_chart_data',
+            method: 'GET',
+            success: (res) => {
+                if (res.statusCode === 200 && !res.data.error) {
+                    // 将数据存储到本地
+                    wx.setStorageSync('chartData', res.data);
+                    this.setData({
+                        chartData: res.data
+                    });
+                } else {
+                    wx.showToast({
+                        title: '获取图表数据失败',
+                        icon: 'none'
+                    });
+                }
+            },
+            fail: (error) => {
+                console.error('获取图表数据失败：', error);
                 wx.showToast({
-                    title: '获取图表数据失败',
-                    icon: 'none',
-                    duration: 2000
-                })
+                    title: '网络错误，请检查网络连接',
+                    icon: 'none'
+                });
+            },
+            complete: () => {
+                wx.hideLoading();
             }
-        } finally {
-            wx.hideLoading()
-        }
+        });
     },
 
     // 点击下拉框时触发
@@ -179,7 +162,7 @@ Page({
     async queryPower(building, room) {
         return new Promise((resolve, reject) => {
             wx.request({
-                url: 'http://127.0.0.1:5050/query',
+                url: 'https://rmxcizonggsx.sealoshzh.site/query',
                 method: 'POST',
                 data: {
                     building: building,
@@ -251,7 +234,7 @@ Page({
                 })
             } else {
                 wx.showToast({
-                    title: error.message || '查询失败，请重试',
+                    title: '查询失败，请重试',
                     icon: 'none',
                     duration: 2000
                 })
@@ -279,7 +262,7 @@ Page({
     showNotice() {
         wx.showModal({
             title: '用前须知',
-            content: this.data.notice,
+            content: '8号楼的ABCD区用1234代替\r例如A102房间号为1102\rB102房间号为2102\rC102房间号为3102\rD102房间号为4102\r若需充值电量可前往\r完美校园APP-缴费-预缴费处缴费\r到账时间1-3分钟，单价0.5元/度',
             showCancel: false
         })
     },

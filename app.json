@@ -1,12 +1,12 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/seat/seat",
+        "pages/chart/chart",
         "pages/school/school",
         "pages/my/my"
     ],
     "window": {
-        "backgroundTextStyle": "light",
+        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "校园服务助手",
         "navigationBarTextStyle": "black"
@@ -33,14 +33,14 @@
                 "selectedIconPath": "images/electricity_on.png"
             },
             {
-                "pagePath": "pages/seat/seat",
-                "text": "座位预约",
-                "iconPath": "images/seat_off.png",
-                "selectedIconPath": "images/seat_on.png"
+                "pagePath": "pages/chart/chart",
+                "text": "图表",
+                "iconPath": "images/chart-off.png",
+                "selectedIconPath": "images/chart-on.png"
             },
             {
                 "pagePath": "pages/school/school",
-                "text": "考研院校",
+                "text": "资料共享",
                 "iconPath": "images/school_off.png",
                 "selectedIconPath": "images/school_on.png"
             },

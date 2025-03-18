@@ -1,0 +1,29 @@
+<view class="charts-container">
+    <view class="header">
+        <view class="chart-title">电量统计图表</view>
+        <view class="refresh-btn" bindtap="refreshChart">
+            <text>刷新</text>
+        </view>
+    </view>
+    
+    <view class="building-selector">
+        <picker bindchange="selectBuilding" value="{{buildingIndex}}" range="{{buildings}}">
+            <view class="picker-value {{buildingIndex === 0 ? 'placeholder' : ''}}">
+                <text>{{buildings[buildingIndex]}}</text>
+                <text class="arrow-icon">▼</text>
+            </view>
+        </picker>
+    </view>
+    
+    <view class="update-time" wx:if="{{!showDefaultChart && singleBuildingData}}">
+        <text>更新时间: {{singleBuildingData.update_time}}</text>
+    </view>
+    
+    <view class="chart-wrapper">
+        <ec-canvas type="2d" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    </view>
+    
+    <view class="chart-note" wx:if="{{chartData.note && showDefaultChart}}">
+        <text>{{chartData.note}}</text>
+    </view>
+</view> 

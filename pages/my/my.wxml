@@ -5,33 +5,36 @@
       <button class="login-btn" bindtap="getUserProfile">点击登录</button>
     </view>
     <view wx:else class="user-info">
-      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <!-- <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image> -->
+      <image class="avatar" src="/images/my.png" mode="aspectFill"></image>
       <view class="user-detail">
-        <text class="nickname">{{userInfo.nickName}}</text>
-        <text class="welcome">欢迎使用校园服务助手</text>
+        <!-- <text class="nickname">{{userInfo.nickName}}</text> -->
+        <text class="nickname">彭于晏</text>
+        <text class="welcome">不是哥们你这么帅???</text>
       </view>
     </view>
   </view>
 
   <!-- 功能菜单 -->
-  <view class="menu-group">
+<view class="menu-group">
     <view class="menu-list">
-      <view class="menu-item" 
-            wx:for="{{menuItems}}" 
-            wx:key="text"
-            bindtap="handleMenuClick"
-            data-index="{{index}}">
-        <view class="menu-left">
-          <image class="menu-icon" src="{{item.icon}}" mode="aspectFit"></image>
-          <text class="menu-text">{{item.text}}</text>
-        </view>
-        <text class="arrow-icon">›</text>
-      </view>
+        <button class="menu-item" 
+                wx:for="{{menuItems}}" 
+                wx:key="text"
+                bindtap="{{item.text === '用前须知' ? 'showSettingsInfo' : (item.type !== 'contact' ? 'handleMenuClick' : '')}}"
+                open-type="{{item.type === 'contact' ? 'contact' : ''}}"
+                data-index="{{index}}">
+            <view class="menu-left">
+                <image class="menu-icon" src="{{item.icon}}" mode="aspectFit"></image>
+                <text class="menu-text">{{item.text}}</text>
+            </view>
+            <text class="menu-right">›</text>
+        </button>
     </view>
-  </view>
+</view>
 
   <!-- 版本信息 -->
   <view class="version-info">
-    <text>版本 1.0.0</text>
+    <text>版本 1.3.0@Eleven</text>
   </view>
 </view> 

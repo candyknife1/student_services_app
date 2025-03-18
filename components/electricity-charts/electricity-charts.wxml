@@ -1,9 +1,0 @@
-<view class="charts-container">
-    <view class="chart-title">电量统计图表</view>
-    <view class="chart-wrapper">
-        <ec-canvas id="electricity-chart" canvas-id="electricity-chart" ec="{{ ec }}"></ec-canvas>
-    </view>
-    <view class="chart-note" wx:if="{{chartData.note}}">
-        <text>{{chartData.note}}</text>
-    </view>
-</view> 

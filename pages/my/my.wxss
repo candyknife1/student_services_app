@@ -52,6 +52,7 @@
   margin-bottom: 6rpx;
 }
 
+
 .welcome {
   font-size: 24rpx;
   color: #999999;
@@ -74,10 +75,16 @@
   align-items: center;
   padding: 24rpx 30rpx;
   border-bottom: 1rpx solid #f5f5f5;
+  background: #ffffff;
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+  font-weight: normal;
+  line-height: normal;
 }
 
-.menu-item:last-child {
-  border-bottom: none;
+.menu-item::after {
+  border: none;
 }
 
 .menu-left {
@@ -96,7 +103,7 @@
   color: #333333;
 }
 
-.arrow-icon {
+.menu-right {
   font-size: 32rpx;
   color: #999999;
 }

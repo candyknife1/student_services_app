@@ -256,10 +256,3 @@ page{
     position: relative;
     z-index: 100;
 }
-
-.charts-section {
-    margin: 30rpx;
-    background: #ffffff;
-    border-radius: 16rpx;
-    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
-}

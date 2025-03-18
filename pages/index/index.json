@@ -1,6 +1,6 @@
 {
     "usingComponents": {
-        "electricity-charts": "../../components/electricity-charts/electricity-charts"
+      
     },
     "navigationBarTitleText": "应急管理大学空调查询系统"
 }

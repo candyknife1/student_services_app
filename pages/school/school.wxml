@@ -1,6 +1,26 @@
-<view class="container">
-  <view class="developing">
-    <icon type="info" size="64"></icon>
-    <text class="notice">{{notice}}</text>
+<view class="page">
+  <view class="banner">
+    <image class="banner-image" src="/images/school/study_banner.jpg" mode="aspectFill"></image>
+    <view class="banner-text">期末复习资料</view>
+  </view>
+  
+  <view class="category-grid">
+    <view class="category-item" 
+          wx:for="{{materialCategories}}" 
+          wx:key="id"
+          bindtap="onCategoryTap"
+          data-id="{{item.id}}"
+          data-name="{{item.name}}">
+      <view class="category-icon-wrapper">
+        <image class="category-icon" src="{{item.icon}}" mode="aspectFit"></image>
+      </view>
+      <text class="category-name">{{item.name}}</text>
+    </view>
+  </view>
+  
+  <button class="info-button" bindtap="showDebugInfo">了解详情</button>
+  
+  <view class="footer-note">
+    <text>更多课程资料正在整理中，敬请期待...</text>
   </view>
 </view> 

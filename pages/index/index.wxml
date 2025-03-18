@@ -53,10 +53,6 @@
       </view>
     </view>
   </view>
-
-  <!-- 在结果区域下方添加图表 -->
-  <view class="charts-section">
-    <electricity-charts chart-data="{{chartData}}" />
-  </view>
 </view>
+ 
 
